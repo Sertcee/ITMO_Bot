@@ -1,0 +1,12 @@
+version: '3'
+services:
+  itmo_bot:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+      - GOOGLE_CSE_ID=${GOOGLE_CSE_ID}
+    container_name: itmo_bot
+    restart: unless-stopped
